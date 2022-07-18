@@ -14,10 +14,11 @@
             Accounts
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Sign-out", destroy_user_session_path, data: {turbo_method: :delete}, class:"dropdown-item" %></li>
+            <% else %>
+              <li><%= link_to "Sign-in", new_user_session_path, class:"dropdown-item" %></li>
+            <% end %>
           </ul>
         </li>
       </ul>
