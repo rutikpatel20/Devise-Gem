@@ -21,6 +21,11 @@
             <% end %>
           </ul>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= button_to 'User Profile', user_profile_path, method: :get, class:"btn btn-light" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

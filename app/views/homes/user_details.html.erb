@@ -1,0 +1,36 @@
+<% if user_signed_in? %>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-12 col-xl-4">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body text-center">
+            <h1 class="mb-2">User Profile</h1>
+            <hr>
+            <p class=" mb-4">E-mail : <%= current_user.email %> </p>
+            <p class=" mb-4">Username : <%= current_user.username %> </p>
+            <p class=" mb-4">First Name : <%= current_user.first_name %> </p>
+            <p class=" mb-4">Last Name : <%= current_user.last_name %> </p>
+            <p class=" mb-4">Contact Number : <%= current_user.contact_number %> </p>
+            <p class=" mb-4">Address : <%= current_user.address %> </p>
+            <p class=" mb-4">Sign-in Count : <%= current_user.sign_in_count %> </p>
+            <p class=" mb-4">Current Sign in IP : <%= current_user.current_sign_in_ip %> </p>
+            <p class=" mb-4">Last Sign in IP : <%= current_user.current_sign_in_ip %> </p>
+            <p class=" mb-4">Current Sign in Time : <%= current_user.current_sign_in_at %> </p>
+            <p class=" mb-4">Last Sign in Time : <%= current_user.last_sign_in_at %> </p>
+            <div class="d-flex align-items-center justify-content-around">
+              <%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-warning rounded btn-lg" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%# Redirect To Path from view %>
+  <%# 1st Way %>
+  <%# <script type="text/javascript">
+    window.location.href="/users/sign_up"
+  </script> %>
+  <%# 2nd Way %>
+  <% controller.redirect_to new_user_session_path %>
+<% end %>

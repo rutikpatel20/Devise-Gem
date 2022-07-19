@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "homes#index"
 
   get "/confirmation_pending" => "homes#after_registration_path"
+  get "/user_profile" => "homes#user_details"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
