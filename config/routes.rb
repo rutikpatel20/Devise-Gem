@@ -4,6 +4,7 @@ Rails.application.routes.draw do
                        passwords: "users/passwords",
                        registrations: "users/registrations",
                        confirmations: "users/confirmations",
+                       unlocks: "users/unlocks",
                      }
   root "homes#index"
 
